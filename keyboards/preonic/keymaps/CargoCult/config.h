@@ -4,7 +4,11 @@
 #include "config_common.h"
 
 #ifdef AUDIO_ENABLE
-    #define STARTUP_SONG SONG(PREONIC_SOUND)
+
+    #define mexico \
+        W__NOTE(_A5), W__NOTE(_A6), H__NOTE(_G6), Q__NOTE(_E6), HD_NOTE(_C6)
+
+    #define STARTUP_SONG SONG(mexico)
     // #define STARTUP_SONG SONG(NO_SOUND)
 
     #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
