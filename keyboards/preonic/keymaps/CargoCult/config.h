@@ -7,8 +7,10 @@
 
     #define mexico \
         W__NOTE(_A5), W__NOTE(_A6), H__NOTE(_G6), Q__NOTE(_E6), HD_NOTE(_C6)
+    #define CREEPING \
+        Q__NOTE(_A5), Q__NOTE(_B5), Q__NOTE(_AS5), Q__NOTE(_C5), Q__NOTE(_B5), Q__NOTE(_CS5)
 
-    #define STARTUP_SONG SONG(mexico)
+    #define STARTUP_SONG SONG(CREEPING)
     // #define STARTUP_SONG SONG(NO_SOUND)
 
     #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
