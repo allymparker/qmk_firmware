@@ -35,8 +35,9 @@ enum preonic_keycodes {
 // Custom macros
 #define SFT_ENT     SFT_T(KC_ENT)               // Tap for Enter, hold for Shift
 #define ALT_F7      LALT(KC_F7)                 // Alt+F7
-#define CTRL_F12    LCTL(KC_F12)             // Ctrl+F12
+#define CTRL_F12    LCTL(KC_F12)                // Ctrl+F12
 #define ALT_INS     LALT(KC_INS)                // Alt+Ins
+#define REFACTR     LCTL(LSFT(KC_R))            // Ctrl+Shift+R
 #define Reshp       MO(_Resharper)              // Resharper Layer
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -140,7 +141,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_Resharper] = {
   {ALT_INS, _______, _______, _______, _______, _______, _______,  ALT_F7, _______, _______, _______, CTRL_F12},
-  {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______},
+  {_______, _______, _______, _______, REFACTR, _______, _______, _______, _______, _______, _______, _______},
   {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______},
   {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______},
   {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
