@@ -1,1 +1,4 @@
-# The default Preonic layout - largely based on the Planck's
+# The CargoCult Preonic layout - largely based on the Planck's
+
+- QWERTY Layout
+- Resharper layer on R1C4
