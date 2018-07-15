@@ -46,3 +46,10 @@
 /* If defined, the RGB lighting will be switched off when the host goes to sleep */
 #define RGBLIGHT_SLEEP
 #endif
+<<<<<<< HEAD:keyboards/kbdfans/kbd75/config.h
+=======
+
+#endif
+
+#define TAPPING_TERM 200
+>>>>>>> Add double tap for Capslock:keyboards/kbd75/config.h
