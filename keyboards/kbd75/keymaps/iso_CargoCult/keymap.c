@@ -43,4 +43,21 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_CAPSLOCK]  = ACTION_TAP_DANCE_DOUBLE(KC_TRNS, KC_CAPS)
 };
 
+static bool lalt_held = false; // This doesn't feel clean...
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode){
+    case KC_LALT:
+      lalt_held = record->event.pressed;
+      return true;
+    case KC_PAUS:
+      // If Left ALT is held, send INSERT instead of PAUSE
+      if (lalt_held && record->event.pressed) {
+        SEND_STRING(SS_TAP(X_INSERT));
+        return false;
+      } else {
+        return true;
+      }
+    default: return true;   // Let QMK handle the rest as usual
+  }
 }
