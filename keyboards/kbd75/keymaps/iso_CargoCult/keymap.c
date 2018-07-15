@@ -1,6 +1,13 @@
 #include QMK_KEYBOARD_H
 
 #define _______ KC_TRNS
+//Tap Dance Declarations
+enum {
+  TD_CAPSLOCK = 0
+};
+
+//Custom Keycodes
+#define TD_CPL TD(TD_CAPSLOCK)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -30,4 +37,10 @@ void led_set_user(uint8_t usb_led) {
 		DDRB &= ~(1 << 2); PORTB &= ~(1 << 2);
 	}
 }
+
+qk_tap_dance_action_t tap_dance_actions[] = {
+  //Double tap for Caps Lock
+  [TD_CAPSLOCK]  = ACTION_TAP_DANCE_DOUBLE(KC_TRNS, KC_CAPS)
+};
+
 }
