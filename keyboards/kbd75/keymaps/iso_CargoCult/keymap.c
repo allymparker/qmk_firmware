@@ -1,12 +1,14 @@
 #include QMK_KEYBOARD_H
 
-#define _______ KC_TRNS
+#define RGBLIGHT_SLEEP
+
 //Tap Dance Declarations
 enum {
   TD_CAPSLOCK = 0
 };
 
 //Custom Keycodes
+#define _______ KC_TRNS
 #define TD_CPL TD(TD_CAPSLOCK)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -25,8 +27,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  RESET,    _______,
     _______,  RGB_TOG,  RGB_MOD,  RGB_HUI,  RGB_HUD,  RGB_SAI,  RGB_SAD,  RGB_VAI,  RGB_VAD,  _______,  _______,  _______,  _______,  _______,            _______,
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                      _______,  _______,
-    _______,  _______,  _______,  _______,  BL_DEC,   BL_TOGG,  BL_INC,   BL_STEP,  _______,  _______,  _______,  _______,  _______,            _______,  _______,
-    _______,  _______,  _______,                      _______,  _______,  _______,                      _______,  _______,  _______,  _______,  _______,  _______
+    _______,  _______,  _______,  _______,  BL_DEC,   BL_TOGG,  BL_INC,   BL_STEP,  _______,  _______,  _______,  _______,  _______,            KC_VOLU,  _______,
+    _______,  _______,  _______,                      KC_MPLY,  KC_MPLY,  KC_MPLY,                      _______,  _______,  _______,  KC_MPRV,  KC_VOLD,  KC_MNXT
   )
 };
 
@@ -43,7 +45,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_CAPSLOCK]  = ACTION_TAP_DANCE_DOUBLE(KC_TRNS, KC_CAPS)
 };
 
-static bool lalt_held = false; // This doesn't feel clean...
+static bool lalt_held = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode){
