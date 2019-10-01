@@ -23,13 +23,13 @@ To set the behavior of an LED, and save it to eeprom, hold the
 raise/lower keys together to access the adjust layer, then use
 the keys indicated below to set the behaviors
 
-* q = Toggle Red LED state, deactivates any other modes
-* w = Toggle Green LED state, deactivates any other modes
-* e = Set RED LED to modifier mode
-* r = Set GREEN LED to modifier mode
-* t = Set RED LED to Blinkinlights mode
-* y = set GREEN LED to Blinkinlights mode
-* u = set RED LED to Keypress mode
-* i = set GREEN LED to Keypress mode
-* o = set RED LED to Carriage mode
-* p = set GREEN LED to Carriage mode
+* a = Toggle Red LED state, deactivates any other modes
+* s = Toggle Green LED state, deactivates any other modes
+* d = Set RED LED to modifier mode
+* f = Set GREEN LED to modifier mode
+* g = Set RED LED to Blinkinlights mode
+* h = set GREEN LED to Blinkinlights mode
+* j = set RED LED to Keypress mode
+* k = set GREEN LED to Keypress mode
+* l = set RED LED to Carriage mode
+* ; = set GREEN LED to Carriage mode
