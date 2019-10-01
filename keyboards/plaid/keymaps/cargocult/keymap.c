@@ -27,7 +27,6 @@ enum plaid_layers {
 
 enum plaid_keycodes {
   QWERTY = SAFE_RANGE,
-  EXT_PLV,
   LED_1,
   LED_2,
   LED_3,
@@ -73,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Esc  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  "   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |SftEnt|''''''''''''''''''''''''@@@@@@@'''@@@'''@@@'''
+ * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |SftEnt|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Ctrl | RAlt | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
@@ -167,7 +166,7 @@ void keyboard_post_init_user(void) {
   }
 }
 
-void eeconfig_init_user(void) {  // EEPROM is getting reset! 
+void eeconfig_init_user(void) {  // EEPROM is getting reset!
   led_config.raw = 0;
   led_config.red_mode = LEDMODE_ON;
   led_config.green_mode = LEDMODE_MODS;
@@ -229,7 +228,7 @@ void led_keypress_update(uint8_t led, uint8_t led_mode, uint16_t keycode, keyrec
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   /* If the either led mode is keypressed based, call the led updater
-     then let it fall through the keypress handlers. Just to keep 
+     then let it fall through the keypress handlers. Just to keep
      the logic out of this procedure */
   if (led_config.red_mode >= LEDMODE_MODS && led_config.red_mode <= LEDMODE_ENTER) {
       led_keypress_update(LED_RED, led_config.red_mode, keycode, record);
